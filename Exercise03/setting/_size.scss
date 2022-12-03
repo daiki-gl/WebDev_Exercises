@@ -1,0 +1,6 @@
+$layout: 1200px;
+$breakpoints: (
+    "sm": "screen and (max-width: 767px)",
+    "md": "screen and (max-width: #{$layout - 1px})",
+    "lg": "screen and (min-width: #{$layout})",
+);

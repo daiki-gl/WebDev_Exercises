@@ -1,0 +1,12 @@
+@import "../setting/_size.scss";
+
+/* ===================================
+# break point
+=================================== */
+@mixin mq($breakpoint: sm) {
+    //map-get(マップ型変数, キー)で値を取得
+      @media #{map-get($breakpoints, $breakpoint)} {
+        
+        @content;
+      }
+    }
