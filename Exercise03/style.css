@@ -526,6 +526,16 @@ img {
 }
 .types-lizard-item img {
   height: 100%;
+  transition: transform 0.3s linear;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg);
+  transform-origin: 50% 0% -10px;
+}
+.types-lizard-item:hover img {
+  transform: rotateX(90deg);
+}
+.types-lizard-item:hover .lizard-name-box {
+  transform: rotateX(0deg);
 }
 .types-lizard-item:nth-child(2) {
   width: 70%;
@@ -533,6 +543,10 @@ img {
 .types-lizard-item:nth-child(2) img {
   -o-object-position: 0;
   object-position: 0 10%;
+}
+.types-lizard-item:nth-child(2) .lizard-name-box {
+  background-image: url(./img/lizard-g1bad87283_1920.jpg);
+  background-position: 0 10%;
 }
 @media screen and (max-width: 1199px) {
   .types-lizard-item:nth-child(2) {
@@ -548,13 +562,25 @@ img {
   -o-object-position: right 8%;
   object-position: right 8%;
 }
+.types-lizard-item:nth-child(3) .lizard-name-box {
+  background-image: url(./img/oleksandr-sushko-pxd7cXEWl9E-unsplash.jpg);
+  background-position: right 8%;
+}
 
 .lizard-name-box {
   position: absolute;
   top: 0;
-  right: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px 20px;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.3s linear;
+  transform: rotateX(-90deg);
+  transform-origin: 50% 100% -10px;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: hard-light;
+  background-image: url(./img/john-cobb-ssAcdlJRsI4-unsplash.jpg);
 }
 @media screen and (max-width: 767px) {
   .lizard-name-box {
@@ -562,5 +588,19 @@ img {
     right: auto;
     bottom: 0;
     left: 0;
+  }
+}
+
+.lizard-info {
+  text-shadow: 1px 1px 3px #fff;
+  width: 50%;
+  margin-left: auto;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+@media screen and (max-width: 767px) {
+  .lizard-info {
+    width: calc(100% - 20px);
+    margin: 15px 10px 0;
   }
 }/*# sourceMappingURL=style.css.map */

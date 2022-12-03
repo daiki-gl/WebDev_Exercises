@@ -4,7 +4,6 @@
 $theme_color: #000;
 $sub_color: #735F32;
 $white_color: #fff;
-// $font-family: cursive ,"sans-serif";
 $font-family:'Tiro Tamil', serif;
 
 /* ===================================
@@ -524,6 +523,18 @@ img {
 
     & img {
         height: 100%;
+        transition: transform 0.3s linear;
+        transform-style: preserve-3d;
+        transform: rotateX(0deg);
+        transform-origin: 50% 0% -10px;
+    }
+
+    &:hover img {
+        transform: rotateX(90deg);
+    }
+
+    &:hover .lizard-name-box {
+        transform: rotateX(0deg);
     }
 
     &:nth-child(2) {
@@ -531,6 +542,11 @@ img {
         & img{
             -o-object-position: 0;
                object-position: 0 10%;
+        }
+
+        & .lizard-name-box {
+            background-image: url(./img/lizard-g1bad87283_1920.jpg);
+            background-position: 0 10%;
         }
 
         @include mq(md) {
@@ -546,20 +562,47 @@ img {
             -o-object-position: right 8%;
                 object-position: right 8%;
         }
+
+        & .lizard-name-box {
+            background-image: url(./img/oleksandr-sushko-pxd7cXEWl9E-unsplash.jpg);
+            background-position: right 8%;
+        }
     }
 }
 
 .lizard-name-box {
     position: absolute;
     top: 0;
-    right: 0;
     background-color: rgba($theme_color, .5);
-    padding: 10px 20px;
-
+    width: 100%;
+    height: 100%;
+    
+    transform-style: preserve-3d;
+    transition: transform 0.3s linear;
+    transform: rotateX(-90deg);
+    transform-origin: 50% 100% -10px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: hard-light;
+    background-image: url(./img/john-cobb-ssAcdlJRsI4-unsplash.jpg);
+    
+    
     @include mq(sm) {
         top: auto;
         right: auto;
         bottom: 0;
         left: 0;
+    }
+}
+
+.lizard-info {
+    text-shadow: 1px 1px 3px $white_color;
+    width: 50%;
+    margin-left: auto;
+    margin-top: 15px;
+    margin-right: 20px;
+    @include mq(sm) {
+        width: calc(100% - 20px);
+        margin: 15px 10px 0;
     }
 }
