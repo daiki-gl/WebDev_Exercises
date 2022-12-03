@@ -72,7 +72,7 @@ img {
     @include mq(md) {
         padding: 100px 20px 0;
         margin-top: 50px;
-        margin-bottom: 50px;
+        margin-bottom: 150px;
     }
 }
 
@@ -324,7 +324,7 @@ img {
     padding: 10px 30px;
 
     @include mq(sm) {
-        margin-top: 70%;
+        margin: 70% auto 0;
         width: calc(100% - 20px);
         padding: 20px 10px;
     }
@@ -360,7 +360,7 @@ img {
 
 .mt-xl-sp {
     @include mq(sm) {
-        margin-top: 50%;
+        margin-top: 80%;
     }
 }
 
@@ -418,11 +418,12 @@ img {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
     height: 0;
-    padding: 0 10px;
+    padding: 0 20px;
     background-color: rgba($color: $sub_color, $alpha: .5);
     transition: all .3s linear;
+    overflow-y: scroll;
 
     & .text, & .trivia-title {
         transition: opacity .5s ease-in;
@@ -586,7 +587,7 @@ img {
     background-blend-mode: hard-light;
     background-image: url(./img/john-cobb-ssAcdlJRsI4-unsplash.jpg);
     
-    
+    // overflow-y: scroll;
     @include mq(sm) {
         top: auto;
         right: auto;
@@ -596,7 +597,7 @@ img {
 }
 
 .lizard-info {
-    text-shadow: 1px 1px 3px $white_color;
+    text-shadow: 0 2px 3px $theme_color;
     width: 50%;
     margin-left: auto;
     margin-top: 15px;
@@ -604,5 +605,9 @@ img {
     @include mq(sm) {
         width: calc(100% - 20px);
         margin: 15px 10px 0;
+    }
+
+    & span {
+        font-size: 1.2rem;
     }
 }

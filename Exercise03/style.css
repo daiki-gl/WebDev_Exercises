@@ -73,7 +73,7 @@ img {
   .container {
     padding: 100px 20px 0;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
   }
 }
 
@@ -331,7 +331,7 @@ img {
 }
 @media screen and (max-width: 767px) {
   .content-box {
-    margin-top: 70%;
+    margin: 70% auto 0;
     width: calc(100% - 20px);
     padding: 20px 10px;
   }
@@ -367,7 +367,7 @@ img {
 
 @media screen and (max-width: 767px) {
   .mt-xl-sp {
-    margin-top: 50%;
+    margin-top: 80%;
   }
 }
 
@@ -420,11 +420,12 @@ img {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: calc(100% - 20px);
+  width: calc(100% - 40px);
   height: 0;
-  padding: 0 10px;
+  padding: 0 20px;
   background-color: rgba(115, 95, 50, 0.5);
   transition: all 0.3s linear;
+  overflow-y: scroll;
 }
 .trivia-content .text, .trivia-content .trivia-title {
   transition: opacity 0.5s ease-in;
@@ -592,7 +593,7 @@ img {
 }
 
 .lizard-info {
-  text-shadow: 1px 1px 3px #fff;
+  text-shadow: 0 2px 3px #000;
   width: 50%;
   margin-left: auto;
   margin-top: 15px;
@@ -603,4 +604,7 @@ img {
     width: calc(100% - 20px);
     margin: 15px 10px 0;
   }
+}
+.lizard-info span {
+  font-size: 1.2rem;
 }/*# sourceMappingURL=style.css.map */
