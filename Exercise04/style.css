@@ -1,0 +1,90 @@
+:root {
+    --primary-bg: rgba(44,62,80 ,1);
+    --secondary-bg: rgba(0,0,0,0.9);
+    --box-shadow-color-1: gold;
+    --box-shadow-color-2: rgba(149,165,166 ,0.1);
+    --box-shadow-color-3: #ecf0f1;
+    --phone-width: 350px;
+    --phone-height: 700px;
+  }
+
+  body {
+    background-color:var(--secondary-bg);
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 40vw;
+    height: 100vh;
+    background-color: #131313;
+    margin: 0 auto
+  }
+
+.phone {
+    position: relative;
+    margin: 0 auto;
+    width: var(--phone-width);
+    height: calc(var(--phone-height) - 70px);
+    padding-top: 70px;
+    background: var(--secondary-bg);
+    border-radius: 40px;
+    box-shadow: inset 1px 2px 1px var(--box-shadow-color-1),
+    2px 8px 2px var(--box-shadow-color-2);  
+}
+
+.phone::after, .phone::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: var(--primary-bg);
+    border-radius: 50%;
+}
+
+.phone::after {
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.phone::before {
+    width: 7px;
+    height: 7px;
+    top: 30px;
+    left: 35%;
+}
+
+.screen {
+    position: relative;
+    width: 90%;
+    height: 89%;
+    border-radius: 10px;
+    margin: 0 auto;
+    background-color: var(--primary-bg);
+}
+
+.screen::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 7px;
+    border-radius: 3px;
+    background-color: var(--primary-bg);
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-bg);
+    box-shadow: inset 1px -1px 0 var(--box-shadow-color-1),0px -2px 0 var(--box-shadow-color-3);
+    border-radius: 50%;
+    margin: 10px auto;
+}
