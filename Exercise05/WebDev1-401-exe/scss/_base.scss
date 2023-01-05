@@ -1,0 +1,27 @@
+$color-text: rgb(13, 13, 37);
+$color-main: rgb(255, 136, 0);
+$color-accent: rgb(255, 170, 77);
+$color-star: rgb(255, 196, 21);
+$color-grey: rgb(247, 247, 248);
+
+$font-lato: "Lato", sans-serif;
+$font-playFair: "Playfair Display", serif;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-lato;
+  font-size: 15px;
+  color: $color-text;
+}
+
+a {
+  color: $color-text;
+  text-decoration: none;
+}
