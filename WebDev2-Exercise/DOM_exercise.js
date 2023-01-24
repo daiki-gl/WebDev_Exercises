@@ -12,7 +12,6 @@ const highlightWord = textArr.filter((highlight) => {
   return highlight.length >= 8
 })
 
-const newArr = []
 const highlightText = textArr.map((word) => {
   highlightWord.forEach((highlightWord) => {
     if (word === highlightWord) {
