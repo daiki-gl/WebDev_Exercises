@@ -84,15 +84,14 @@ const moveCoin = (avatarRect, coinRect) => {
   if (x < 0) x = 0
 
   if (coinRect) {
-    const distanceX = coinRect.x - x
-    const distanceY = coinRect.y - y
     if (
-      ((0 <= distanceX && distanceX <= 100) ||
-        (-100 <= distanceX && distanceX <= 0)) &&
-      ((0 <= distanceY && distanceY <= 100) ||
-        (-100 <= distanceY && distanceY <= 0))
+      x > avatarRect.x - 100 &&
+      x < avatarRect.x + 100 &&
+      y > avatarRect.y - 100 &&
+      y < avatarRect.y + 100
     ) {
-      moveCoin()
+      moveCoin(avatarRect, coinRect)
+      return
     }
   }
   coin.style.top = `${y}px`
