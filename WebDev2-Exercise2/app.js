@@ -1,18 +1,19 @@
 //Adding a note
 const addBtn = document.getElementById('add-btn')
+const input = document.getElementById('add-input')
 
 const addNote = (e) => {
-  let inputVal = document.getElementById('add-input').value
+  let inputVal = input.value
   e.preventDefault()
   const list = document.getElementById('list')
   const li = document.createElement('li')
   li.innerHTML = `<p>${inputVal}</p>
                   <p>
-                    <i class="fa fa-pencil-square-o"></i><i class="fa fa-times"></i
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i
                     </p>
                     <input type="text" class="edit-note">`
   list.appendChild(li)
-  inputVal = ''
+  input.value = ''
 }
 addBtn.addEventListener('click', addNote)
 
