@@ -9,6 +9,7 @@
 
 $(document).ready(function () {
   // code goes here
+
   $('#addTask').on('click', function (e) {
     const text = $('.textBox').val()
     if (!text) {
@@ -16,7 +17,10 @@ $(document).ready(function () {
       return
     } else {
       alert(`New Task: ${text}`)
+      const newTask = $(`<li class="task">${text}</li>`)
+      $('.notCompleted').append(newTask)
     }
+
     $('.textBox').val('')
   })
 })
