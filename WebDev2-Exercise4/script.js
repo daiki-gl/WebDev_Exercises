@@ -17,7 +17,6 @@ let currentSlide = 0
 const lastSlide = images.length - 1
 
 prev.addEventListener('click', () => {
-  console.log(currentSlide)
   if (currentSlide == 0) {
     currentSlide = lastSlide
     return (img.src = images[currentSlide])
