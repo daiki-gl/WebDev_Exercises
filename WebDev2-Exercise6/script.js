@@ -28,13 +28,16 @@ $(document).ready(function () {
 
     $('.fa-check').click(function () {
       const checkedTask = $(this).parent()
-      checkedTask.detach()
-      $('.completed').append(checkedTask)
+      checkedTask.fadeOut(1000, function () {
+        checkedTask.hide().appendTo('.completed').fadeIn(1000)
+      })
     })
 
     $('.fa-trash-can').click(function () {
-      $(this).parent().fadeOut(1000)
-      $(this).parent().remove()
+      const deleteTask = $(this).parent()
+      deleteTask.fadeOut(1000, function () {
+        deleteTask.remove()
+      })
     })
     $('.textBox').val('')
   })
