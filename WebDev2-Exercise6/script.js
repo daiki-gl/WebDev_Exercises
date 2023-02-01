@@ -18,23 +18,25 @@ $(document).ready(function () {
     } else {
       alert(`New Task: ${text}`)
       const newTask = $(
-        `<li class="task">${text}
+        `<div class="task">${text}
+          <button>
             <i class="fa-solid fa-check"></i>
             <i class="fa-solid fa-trash-can"></i>
-        </li>`
+          </button>
+        </div>`
       )
       $('.notCompleted').append(newTask)
     }
 
     $('.fa-check').click(function () {
-      const checkedTask = $(this).parent()
+      const checkedTask = $(this).parent().parent()
       checkedTask.fadeOut(1000, function () {
         checkedTask.hide().appendTo('.completed').fadeIn(1000)
       })
     })
 
     $('.fa-trash-can').click(function () {
-      const deleteTask = $(this).parent()
+      const deleteTask = $(this).parent().parent()
       deleteTask.fadeOut(1000, function () {
         deleteTask.remove()
       })
