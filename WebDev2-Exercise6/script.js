@@ -29,14 +29,14 @@ $(document).ready(function () {
     }
 
     $('.fa-check').click(function () {
-      const checkedTask = $(this).parent().parent()
+      const checkedTask = $(this).closest('.task')
       checkedTask.fadeOut(1000, function () {
         checkedTask.hide().appendTo('.completed').fadeIn(1000)
       })
     })
 
     $('.fa-trash-can').click(function () {
-      const deleteTask = $(this).parent().parent()
+      const deleteTask = $(this).closest('.task')
       deleteTask.fadeOut(1000, function () {
         deleteTask.remove()
       })
