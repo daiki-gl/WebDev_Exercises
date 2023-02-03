@@ -4,16 +4,26 @@ const postTemplate = document.querySelector('template')
 
 const submitBtn = document.querySelector('button[type=submit]')
 
-async function sendHttpRequest(method, url, titleVal, contentVal) {
+// async function sendHttpRequest(method, url, titleVal, contentVal) {
+async function sendHttpRequest(method, url, values) {
   //with axios
   const { data } = await axios(url, { method })
   // console.log(data)
 
+  if (values.title === undefined && values.body === undefined) {
+    const a = document.querySelector('#new-post')
+    const errEl = document.createElement('span')
+    a.appendChild(errEl)
+    errEl.innerText = '*You cannot empty'
+    errEl.style.color = 'red'
+
+    throw new Error('No value')
+  }
+
   data.userId = 1
-  data.title = titleVal
-  data.body = contentVal
+  data.title = values.title
+  data.body = values.body
   return data
-  // return axios.get(url)
 }
 
 async function fetchPosts() {
@@ -37,18 +47,17 @@ async function fetchPosts() {
 async function addPosts(e) {
   e.preventDefault()
   const title = document.querySelector('input[type=text]')
-  const titleVal = title.value
   const content = document.querySelector('textarea')
+  const titleVal = title.value
   const contentVal = content.value
 
   const responseData = await sendHttpRequest(
     'POST',
     'https://jsonplaceholder.typicode.com/posts',
-    titleVal,
-    contentVal
+    titleVal && contentVal && { title: titleVal, body: contentVal }
   )
 
-  if (!responseData.title == '' && !responseData.body == '') {
+  if (responseData) {
     const postElClone = document.importNode(postTemplate.content, true)
     postElClone.querySelector('h2').textContent = responseData.title
     postElClone.querySelector('p').textContent = responseData.body
@@ -63,5 +72,13 @@ async function addPosts(e) {
 
 // READ/GET
 fetchButton.addEventListener('click', fetchPosts)
-
 submitBtn.addEventListener('click', addPosts)
+
+let string1 = ''
+let object1 = { a: 1, b: 2, c: 3 }
+
+for (const property1 in object1) {
+  string1 += object1[property1]
+}
+
+console.log(string1)
