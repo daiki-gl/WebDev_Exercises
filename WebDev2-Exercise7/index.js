@@ -4,35 +4,6 @@ const postTemplate = document.querySelector('template')
 
 const submitBtn = document.querySelector('button[type=submit]')
 
-// submitBtn.addEventListener('click', fetchData)
-
-// async function fetchData(e) {
-//   e.preventDefault()
-//   const responseData = await sendHttpRequest(
-//     'POST',
-//     'https://jsonplaceholder.typicode.com/posts',
-//     {
-//       title: input.value,
-//       content: textarea.value,
-//     }
-//   )
-
-//   if (responseData.length > 0) {
-//     for (const val of responseData) {
-//       const postElClone = document.importNode(postTemplate.content, true)
-//       postElClone.querySelector('h2').textContent = val.title
-//       postElClone.querySelector('p').textContent = val.content
-//       listElement.appendChild(postElClone)
-//     }
-//   }
-// }
-
-// async function sendHttpRequest(method, url, data) {
-//   const values = await axios(url, { method }, data)
-//   console.log(values)
-//   return values
-// }
-
 async function sendHttpRequest(method, url, titleVal, contentVal) {
   //with axios
   const { data } = await axios(url, { method })
@@ -65,8 +36,10 @@ async function fetchPosts() {
 
 async function addPosts(e) {
   e.preventDefault()
-  const titleVal = document.querySelector('input[type=text]').value
-  const contentVal = document.querySelector('textarea').value
+  const title = document.querySelector('input[type=text]')
+  const titleVal = title.value
+  const content = document.querySelector('textarea')
+  const contentVal = content.value
 
   const responseData = await sendHttpRequest(
     'POST',
@@ -83,6 +56,8 @@ async function addPosts(e) {
     listElement.appendChild(postElClone)
   }
 
+  title.value = ''
+  content.value = ''
   console.log(responseData)
 }
 
