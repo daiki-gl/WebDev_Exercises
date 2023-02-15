@@ -8,17 +8,17 @@ const submitBtn = document.querySelector('button[type=submit]')
 async function sendHttpRequest(method, url, values) {
   //with axios
   const { data } = await axios(url, { method })
-  // console.log(data)
+  console.log(axios(url))
 
-  if (values.title === undefined && values.body === undefined) {
-    const a = document.querySelector('#new-post')
-    const errEl = document.createElement('span')
-    a.appendChild(errEl)
-    errEl.innerText = '*You cannot empty'
-    errEl.style.color = 'red'
+  // if (values.title === undefined && values.body === undefined) {
+  //   const a = document.querySelector('#new-post')
+  //   const errEl = document.createElement('span')
+  //   a.appendChild(errEl)
+  //   errEl.innerText = '*You cannot empty'
+  //   errEl.style.color = 'red'
 
-    throw new Error('No value')
-  }
+  //   throw new Error('No value')
+  // }
 
   data.userId = 1
   data.title = values.title
@@ -46,7 +46,7 @@ async function fetchPosts() {
 
 async function addPosts(e) {
   e.preventDefault()
-  const title = document.querySelector('input[type=text]')
+  // const title = document.querySelector('input[type=text]')
   const content = document.querySelector('textarea')
   const titleVal = title.value
   const contentVal = content.value
