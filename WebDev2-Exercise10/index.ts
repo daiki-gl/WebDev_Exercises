@@ -53,7 +53,7 @@ const exerciseOne = () => {
     const largestNumber:number = Number.MAX_VALUE;
     const mostBiglyNumber:number = Infinity;
 
-    const members: (string | number)[] = [
+    const members: number[] = [
         integer,
         float,
         hex,
@@ -65,7 +65,7 @@ const exerciseOne = () => {
         mostBiglyNumber
     ];
 
-    members[0] = '12345';
+    members[0] = 12345;
 
     console.log('[Exercise 1.4]', members);
 
@@ -88,7 +88,6 @@ const exerciseOne = () => {
 
     // We want to represent an inventoryItem as a structure where
     // the first entry is the item name and the second is the quantity
-
     const inventoryItem:[string, number] = ['fidget wibbit', 11];
 
     // later we destructure it
